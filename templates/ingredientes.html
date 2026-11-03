@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Ingredientes</title>
+    <link rel="stylesheet" href="/static/cores.css">
+
+</head>
+<body>
+
+    <h1>Ingredientes cadastrados</h1>
+
+    <a href="/">Início</a>
+    <br><br>
+
+    <a href="/ingredientes/adicionar">Adicionar ingrediente</a>
+
+    <br><br>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Unidade</th>
+            <th>Estoque</th>
+            <th>Data de validade</th>
+            <th>Ações</th>
+        </tr>
+
+        {% for ingrediente in ingredientes %}
+        <tr>
+            <td>{{ ingrediente[0] }}</td>
+            <td>{{ ingrediente[1] }}</td>
+            <td>{{ ingrediente[2] }}</td>
+            <td>{{ ingrediente[3] }}</td>
+            <td>{{ ingrediente[4] }}</td>
+            <td>
+                <a href="/ingredientes/editar/{{ ingrediente[0] }}">Editar</a>
+
+                <form action="/ingredientes/excluir/{{ ingrediente[0] }}" method="POST">
+                    <button type="submit">Excluir</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Ingrediente</title>
+    <link rel="stylesheet" href="/static/cores.css">
+
+</head>
+<body>
+
+    <h1>Cadastrar ingrediente</h1>
+
+    <form action="/ingredientes/enviar" method="POST">
+
+        <label>Nome:</label>
+        <input type="text" name="nome" required>
+        <br><br>
+
+        <label>Unidade:</label>
+        <input type="text" name="unidade" placeholder="Ex.: kg, litro, unidade" required>
+        <br><br>
+
+        <label>Estoque:</label>
+        <input type="number" name="estoque" min="0" required>
+        <br><br>
+
+        <label>Data de validade:</label>
+        <input type="date" name="data_validade" required>
+        <br><br>
+
+        <button type="submit">Cadastrar</button>
+
+    </form>
+
+    <br>
+    <a href="/ingredientes">Voltar para ingredientes</a>
+
+</body>
+</html>
